@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>User Dashboard - Campus Lost and Found</title>
+    </head>
+    <body>
+        <header>
+            <div id="header_text">
+                <h1>Campus Lost &amp; Found</h1>
+                <p>AIUB</p>
+            </div>
+
+            <form action="#" method="get">
+                <label for="search">Search</label>
+                <input type="text" placeholder="Search lost item, bag, pen .....">
+                <button id="submit">Submit</button>
+            </form>
+
+            <nav id="header_navigation">
+                <ul>
+                    <li><a href="#">Notifications(0)</a></li>
+                    <li><a href="#">Tonmoy (Student)</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div>
+            <aside>
+                <nav id="aside_nevigation">
+                    <h1>Portal Nevigation</h1>
+                    <ul>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Browse Listing</a></li>
+                        <li><a href="#">Report Lost Property</a></li>
+                        <li><a href="#">Report Found Property</a></li>
+                        <li><a href="#">My Reports and Claims</a></li>
+                        <li><a href="#">Profile &amp; Settings</a></li>
+                    </ul>
+                </nav>
+                <div id="aside_ex_text">
+                    <h4>Campus Security Desk</h4>
+                    <p>Location: Ground Floor, Building D <br> Helpline: +880 155******8 </p>
+                </div>
+            </aside>
+            <main id="main_body">
+                <div id="main_head">
+                    <h1>File a Lost Property Report</h1>
+                    <p>Submit verified details to help campus security and fellow students locate your misplaced belongings.</p>
+                </div>
+
+                <div id="lost_form">
+                    <a href="#"><button id="btnRL" type="button">Report Lost</button></a>
+                    <a href="#"><button id="btnFI" type="button">Found Item</button></a>
+                    <form action="#" method="get">
+                        <legend>Item Identification Details</legend>
+                        <div id="lostProperty">
+                            <label for="item_name">Item Name: </label>
+                            <br>
+                            <input type="text" id="item_name" placeholder="e.g., Casio FX-991EX Calculator, Navy Blue Backpack" required>
+                            <br><br>
+                            <label for="catagory">Catagory</label>
+                            <br>
+                            <select name="catagory" id="catagory" required>
+                                <option value="">-- Select a Category --</option>
+                                <option value="Electronics">Electronics (Laptops, Phones, Chargers, Calculators)</option>
+                                <option value="Bags & Wallets">Bags &amp; Wallets (Backpacks, Purses)</option>
+                                <option value="Documents & IDs">Documents &amp; Student/Faculty IDs</option>
+                                <option value="Books & Stationery">Books, Notebooks &amp; Stationery</option>
+                                <option value="Clothing & Accessories">Clothing &amp; Accessories (Watches, Glasses)</option>
+                                <option value="Keys">Keys &amp; Locker Access Tokens</option>
+                                <option value="Other">Other Personal Possessions</option>
+                            </select>
+                            <br><br>
+                            <label for="description">Description (Distinct Features): </label>
+                            <br>
+                            <textarea type="text" id="description" required minlength="3" maxlength="200" placeholder="Write distinct marks, color shades, stickers, brand names, or scratches (within 200 words)..."></textarea>
+                            <br>
+                            <h6>Mention identifiable marks without giving away secret passwords/codes.</h6>
+                            <br> <br>
+                            <label for="location">Last Seen Campus Location:</label>
+                            <br>
+                            <select id="location" name="lost_location" required>
+                                <option value="">-- Select Campus Location --</option>
+                                <option value="Annex 1">Annex 1</option>
+                                <option value="Annex 2">Annex 2</option>
+                                <option value="Annex 3">Annex 3</option>
+                                <option value="Annex 4">Annex 4</option>
+                                <option value="Annex 5">Annex 5</option>
+                                <option value="Annex 6">Annex 6</option>
+                                <option value="Annex 7">Annex 7</option>
+                                <option value="Annex 8">Annex 8</option>
+                                <option value="Annex 9">Annex 9</option>
+                                <option value="Library">Central Library </option>
+                                <option value="Cafeteria">Campus Main Cafeteria</option>
+                                <option value="Sports Field">Football Field</option>
+                                <option value="Basement Parking">Basement Parking Area</option>
+                                <option value="Building C">Building C </option>
+                                <option value="Building D">Building D (Classrooms &amp; Security Desk)</option>
+                            </select>
+                            
+                        </div>
+                        <br><br>
+                        <div id="lostTimeDate">
+                            <div>
+                                <label for="date">Loss date:</label>
+                                <br>
+                                <input type="date" name="date" id="date">
+                            </div>
+                            <div>
+                                <label for="Time">Approximate Time:</label>
+                                <br>
+                                <input type="time" name="Time" id="Time">
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="form-group">
+                            <label for="item_image">Upload Item Reference Image:</label>
+                            <div class="file-upload-box">
+                                <input type="file" id="item_image" name="item_image" accept="image/png, image/jpeg, image/jpg">
+                                <p class="file-instructions">Supported formats: JPG, PNG (Max file size: 5MB). Uploading a photo greatly accelerates owner verification.</p>
+                            </div>
+                        </div>
+                        <div id="fbutton">
+                            <a href="#"><button type="submit">Submit</button></a>
+                            <a href="#"><button type="reset">Reset</button></a>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+        <footer>
+            <p>&copy; 2026 Campus Lost and Found Platform | American International University-Bangladesh (AIUB)</p>
+            <p>CSC 3215 Web Technologies Project | Team <code>HTTP/1.1 200 OK</code></p>
+        </footer>
+    </body>
+</html>
