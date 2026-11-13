@@ -27,7 +27,6 @@
             </nav>
         </header>
 
-
         <div>
             <aside>
                 <nav id="aside_navigation">
@@ -47,7 +46,6 @@
                 </div>
             </aside>
 
-            
             <main id="main_body">
                 <div id="main_head">
                     <h1>Submit Ownership Claim</h1>
@@ -55,7 +53,6 @@
                 </div>
 
                 <div id="claim_container">
-                    
                     <div id="item_summary_card">
                         <h3>Item Selected for Claim</h3>
                         <div class="summary_badge">Status: Found (Under Custody)</div>
@@ -75,12 +72,10 @@
                         </div>
                     </div>
 
-                   
                     <div id="claim_form_wrapper">
-                        <form action="report_history.html" method="post" enctype="multipart/form-data" id="claim_form">
+                        <form action="report_history.html" method="post" enctype="multipart/form-data" id="claim_form" onsubmit="return validateClaimForm(event)" novalidate>
                             <legend>Verification &amp; Proof of Ownership</legend>
 
-                            
                             <div class="form_group">
                                 <label for="claimant_name">Claimant Name:</label>
                                 <input type="text" id="claimant_name" name="claimant_name" value="Tonmoy Chakrabarty Joy" readonly>
@@ -96,14 +91,12 @@
                                 <input type="tel" id="contact_phone" name="contact_phone" placeholder="+880 1XXXXXXXXX" required>
                             </div>
 
-                            
                             <div class="form_group">
                                 <label for="ownership_proof_desc">Confidential Identifying Details: <span class="required">*</span></label>
                                 <textarea id="ownership_proof_desc" name="ownership_proof_desc" rows="4" placeholder="Describe unique features not shown publicly (e.g., specific stickers, scratches, password hint, serial number, engraved name, or exact contents inside)..." required></textarea>
                                 <h6>Provide exact details that only the true owner would know to speed up physical validation.</h6>
                             </div>
 
-                            
                             <div class="form_group">
                                 <label for="proof_file">Upload Proof / Receipt / Reference Photo: <span class="required">*</span></label>
                                 <div class="file-upload-box">
@@ -112,7 +105,6 @@
                                 </div>
                             </div>
 
-                            
                             <div class="form_group">
                                 <label for="collection_time">Preferred Verification Visit Time:</label>
                                 <select id="collection_time" name="collection_time" required>
@@ -123,13 +115,13 @@
                                 </select>
                             </div>
 
-                            
                             <div class="form_group checkbox_group">
                                 <input type="checkbox" id="verify_declaration" name="verify_declaration" required>
                                 <label for="verify_declaration">I hereby declare that this property belongs to me. I agree to present my valid AIUB Student ID Card during in-person physical collection at the Security Desk.</label>
                             </div>
 
-                            
+                            <p id="msg" style="font-weight: bold; margin-top: 12px;"></p>
+
                             <div id="fbutton">
                                 <button type="submit" id="btn_submit_claim">Submit Claim</button>
                                 <a href="items_browse.html" class="btn_cancel">Cancel</a>
@@ -140,10 +132,11 @@
             </main>
         </div>
 
-        
         <footer>
             <p>&copy; 2026 Campus Lost and Found Platform | American International University-Bangladesh (AIUB)</p>
             <p>CSC 3215 Web Technologies Project | Team <code>HTTP/1.1 200 OK</code></p>
         </footer>
+
+        <script src="claim_item.js"></script>
     </body>
 </html>
