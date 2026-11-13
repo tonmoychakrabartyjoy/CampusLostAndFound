@@ -12,10 +12,10 @@
                 <p>AIUB</p>
             </div>
 
-            <form action="#" method="get">
+            <form action="#" method="get" onsubmit="return validateSearch(event)">
                 <label for="search">Search</label>
-                <input type="text" placeholder="Search lost item, bag, pen .....">
-                <button id="submit">Submit</button>
+                <input type="text" id="search" placeholder="Search lost item, bag, pen .....">
+                <button id="submit" type="submit">Submit</button>
             </form>
 
             <nav id="header_navigation">
@@ -53,7 +53,7 @@
                 <div id="lost_form">
                     <a href="report_lost.html"><button id="btnRL" type="button">Report Lost</button></a>
                     <a href="report_found.html"><button id="btnFI" type="button">Found Item</button></a>
-                    <form action="#" method="get">
+                    <form id="found_form" action="#" method="get" onsubmit="return validateFoundForm(event)" novalidate>
                         <legend>Found Property &amp; Custody Details</legend>
                         <div id="lostProperty">
                             <label for="item_name">Item Name: </label>
@@ -75,7 +75,7 @@
                             <br><br>
                             <label for="description">Description (Distinct Features): </label>
                             <br>
-                            <textarea type="text" id="description" required minlength="3" maxlength="200" placeholder="Mention color, brand, exterior physical condition (keep unique stickers or passwords confidential to test claimant ownership)..."></textarea>
+                            <textarea id="description" required minlength="3" maxlength="200" placeholder="Mention color, brand, exterior physical condition (keep unique stickers or passwords confidential to test claimant ownership)..."></textarea>
                             <br>
                             <h6>Do not disclose private serial numbers or lock screen contents in the public description.</h6>
                             <br> <br>
@@ -130,9 +130,12 @@
                                 <p class="file-instructions">Supported formats: JPG, PNG (Max file size: 5MB). Uploading a photo greatly accelerates owner verification.</p>
                             </div>
                         </div>
+
+                        <p id="msg" style="font-weight: bold; margin-top: 14px;"></p>
+
                         <div id="fbutton">
-                            <a href="#"><button type="submit">Submit</button></a>
-                            <a href="#"><button type="reset">Reset</button></a>
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
                         </div>
                     </form>
                 </div>
@@ -142,5 +145,7 @@
             <p>&copy; 2026 Campus Lost and Found Platform | American International University-Bangladesh (AIUB)</p>
             <p>CSC 3215 Web Technologies Project | Team <code>HTTP/1.1 200 OK</code></p>
         </footer>
+
+        <script src="report_found.js"></script>
     </body>
 </html>
