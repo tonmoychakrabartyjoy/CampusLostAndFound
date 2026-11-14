@@ -168,15 +168,22 @@ function setupFormResetHandler() {
 }
 
 function validateSearch(event) {
+    event.preventDefault();
     let searchInput = document.getElementById("search");
-    if (searchInput && searchInput.value.trim() === "") {
-        event.preventDefault();
+    let query = searchInput ? searchInput.value.trim() : "";
+
+    if (query === "") {
         alert("Please enter a keyword to search lost or found items.");
-        searchInput.style.borderColor = "#d93025";
-        searchInput.focus();
+        if (searchInput) {
+            searchInput.style.borderColor = "#d93025";
+            searchInput.focus();
+        }
         return false;
     }
-    return true;
+
+    searchInput.style.borderColor = "#cbd5e1";
+    window.location.href = "items_browse.html?q=" + encodeURIComponent(query);
+    return false;
 }
 
 function renderLostReportsTable() {
