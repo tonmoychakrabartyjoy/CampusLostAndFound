@@ -12,7 +12,7 @@
                 <p>AIUB</p>
             </div>
 
-            <form action="#" method="get">
+            <form action="#" method="get" onsubmit="return filterListings(event)">
                 <label for="search">Search</label>
                 <input type="text" id="search" name="q" placeholder="Search lost item, bag, pen .....">
                 <button id="submit" type="submit">Submit</button>
@@ -52,7 +52,7 @@
 
 
                 <div>
-                    <form class="filter_form" action="items_browse.html" method="get">
+                    <form class="filter_form" action="items_browse.html" method="get" onsubmit="return filterListings(event)">
                         <div class="form_group">
                             <label for="filter_category">Category</label>
                             <select id="filter_category" name="category">
@@ -88,7 +88,7 @@
 
                         <div class="filter_actions">
                             <button type="submit" class="btn_submit">Apply</button>
-                            <a href="items_browse.html" class="btn_reset">Reset</a>
+                            <a href="items_browse.html" class="btn_reset" onclick="return resetFilters(event)">Reset</a>
                         </div>
                     </form>
                 </div>
@@ -207,5 +207,6 @@
             <p>&copy; 2026 Campus Lost and Found Platform | American International University-Bangladesh (AIUB)</p>
             <p>CSC 3215 Web Technologies Project | Team <code>HTTP/1.1 200 OK</code></p>
         </footer>
+        <script src="items_browse.js"></script>
     </body>
 </html>

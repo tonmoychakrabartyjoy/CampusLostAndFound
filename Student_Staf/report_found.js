@@ -5,11 +5,9 @@ window.onload = function () {
     setupFormResetHandler();
 };
 
-
 function validateFoundForm(event) {
     event.preventDefault();
     resetFieldBorders();
-
 
     let itemNameInput = document.getElementById("item_name");
     let categoryInput = document.getElementById("catagory");
@@ -30,37 +28,31 @@ function validateFoundForm(event) {
 
     let msg = document.getElementById("msg");
 
-    
     if (itemName.length < 3) {
         showError(itemNameInput, msg, "Item Name must be at least 3 characters long.");
         return false;
     }
 
-    
     if (category === "") {
         showError(categoryInput, msg, "Please select an item category.");
         return false;
     }
 
-    
     if (desc.length < 3 || desc.length > 200) {
         showError(descInput, msg, "Description must be between 3 and 200 characters.");
         return false;
     }
 
-    
     if (location === "") {
         showError(locationInput, msg, "Please select where you found the item.");
         return false;
     }
 
-    
     if (custody === "") {
         showError(custodyInput, msg, "Please select the current item custody status.");
         return false;
     }
 
-    
     if (dateVal === "") {
         showError(dateInput, msg, "Please select the date when the item was found.");
         return false;
@@ -71,13 +63,11 @@ function validateFoundForm(event) {
         return false;
     }
 
-    
     if (timeVal === "") {
         showError(timeInput, msg, "Please enter the approximate time the item was found.");
         return false;
     }
 
-    
     let uploadedFileName = "No image attached";
     if (imageInput.files && imageInput.files.length > 0) {
         let file = imageInput.files[0];
@@ -98,7 +88,6 @@ function validateFoundForm(event) {
         uploadedFileName = file.name;
     }
 
-   
     let newNotice = {
         noticeId: "FND-" + (2001 + foundReports.length),
         itemName: itemName,
@@ -128,7 +117,6 @@ function validateFoundForm(event) {
     return false;
 }
 
-
 function showError(inputEl, msgEl, errorText) {
     msgEl.style.color = "#d93025";
     msgEl.innerText = errorText;
@@ -147,7 +135,6 @@ function resetFieldBorders() {
         }
     }
 }
-
 
 function setupDescriptionCounter() {
     let descInput = document.getElementById("description");
@@ -170,7 +157,6 @@ function setupDescriptionCounter() {
     });
 }
 
-
 function setupFormResetHandler() {
     let form = document.getElementById("found_form");
     if (!form) return;
@@ -188,19 +174,24 @@ function setupFormResetHandler() {
     });
 }
 
-
 function validateSearch(event) {
+    event.preventDefault();
     let searchInput = document.getElementById("search");
-    if (searchInput && searchInput.value.trim() === "") {
-        event.preventDefault();
+    let query = searchInput ? searchInput.value.trim() : "";
+
+    if (query === "") {
         alert("Please enter a keyword to search lost or found items.");
-        searchInput.style.borderColor = "#d93025";
-        searchInput.focus();
+        if (searchInput) {
+            searchInput.style.borderColor = "#d93025";
+            searchInput.focus();
+        }
         return false;
     }
-    return true;
-}
 
+    searchInput.style.borderColor = "#cbd5e1";
+    window.location.href = "items_browse.html?q=" + encodeURIComponent(query);
+    return false;
+}
 
 function renderFoundNoticesTable() {
     let mainBody = document.getElementById("main_body");

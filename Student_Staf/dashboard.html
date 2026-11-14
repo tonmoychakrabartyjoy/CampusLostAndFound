@@ -12,10 +12,10 @@
                 <p>AIUB</p>
             </div>
 
-            <form action="#" method="get">
+            <form action="items_browse.html" method="get" onsubmit="return handleDashboardSearch(event)">
                 <label for="search">Search</label>
-                <input type="text" placeholder="Search lost item, bag, pen .....">
-                <button id="submit">Submit</button>
+                <input type="text" id="search" name="q" placeholder="Search lost item, bag, pen .....">
+                <button id="submit" type="submit">Submit</button>
             </form>
 
             <nav id="header_navigation">
@@ -103,5 +103,6 @@
             <p>&copy; 2026 Campus Lost and Found Platform | American International University-Bangladesh (AIUB)</p>
             <p>CSC 3215 Web Technologies Project | Team <code>HTTP/1.1 200 OK</code></p>
         </footer>
+        <script src="dashboard.js"></script>
     </body>
 </html>
