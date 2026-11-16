@@ -48,7 +48,8 @@ Because of all these problems, poor communication, lack of proper record keeping
 | ![Home Page](./ui_home.png) | ![Search Lost Items](./ui_browse.png) |
 
 ### Report Lost & Found Item Forms
-![Report Lost and Found Item](./ui_report.png)
+![Report Found Item](./found_item.png)
+![Report Lost Item](./lost_item.png)
 
 ---
 
