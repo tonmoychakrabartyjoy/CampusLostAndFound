@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile &amp; Settings | Campus Lost &amp; Found</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Campus Lost &amp; Found</h1>
+        <p>Account Settings</p>
+    </header>
+
+    <div class="layout">
+        <aside>
+            <h2>Navigation</h2>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="faculty_dashboard.html">Dashboard</a></li>
+                    <li><a href="faculty_activity_log.html">Activity Log</a></li>
+                    <li><a href="items_browse.html">Items Browse</a></li>
+                    <li><a href="report_found.html">Report Found</a></li>
+                    <li><a href="report_lost.html">Report Lost</a></li>
+                    <li><a href="report_history.html">My Reports &amp; Claims</a></li>
+                    <li><a href="profile.html" aria-current="page">Profile</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <h2>Profile &amp; Settings</h2>
+            <p>View and update your personal information and account settings.</p>
+
+            <section aria-labelledby="profile-information-heading">
+                <h3 id="profile-information-heading">My Profile Information</h3>
+                <div class="profile-image-area">
+                    <div id="profile-picture-preview" class="profile-avatar" aria-label="Profile picture placeholder"></div>
+                    <p id="profile-picture-name">Choose a profile picture</p>
+                </div>
+                <div class="table-container">
+                    <table id="profile-information">
+                        <tbody>
+                            <tr><th scope="row">Full Name</th><td id="profile-name"></td></tr>
+                            <tr><th scope="row">Student/Employee ID</th><td id="profile-id"></td></tr>
+                            <tr><th scope="row">Email</th><td id="profile-email"></td></tr>
+                            <tr><th scope="row">Role</th><td id="profile-role"></td></tr>
+                            <tr><th scope="row">Department</th><td id="profile-department"></td></tr>
+                            <tr><th scope="row">Phone</th><td id="profile-phone"></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section aria-labelledby="edit-profile-heading">
+                <h3 id="edit-profile-heading">Edit Profile</h3>
+                <form id="profile-form" action="#" method="post">
+                    <p>
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="full_name" placeholder="Enter your full name" required>
+                    </p>
+                    <p>
+                        <label for="student-id">Student/Employee ID</label>
+                        <input type="text" id="student-id" name="student_id" placeholder="Enter your student/staff ID" required>
+                    </p>
+                    <p>
+                        <label for="email">Institutional Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your institutional email" required>
+                    </p>
+                    <p>
+                        <label for="department">Department</label>
+                        <input type="text" id="department" name="department" placeholder="Enter your department">
+                    </p>
+                    <p>
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    </p>
+                    <p>
+                        <label for="profile-picture">Profile Picture</label>
+                        <input type="file" id="profile-picture" name="profile_picture" accept="image/*">
+                    </p>
+                    <button type="submit">Update Profile</button>
+                    <button type="reset" class="secondary-button">Clear Form</button>
+                </form>
+            </section>
+
+            <section aria-labelledby="change-password-heading">
+                <h3 id="change-password-heading">Change Password</h3>
+                <form id="password-form" action="#" method="post">
+                    <p>
+                        <label for="current-password">Current Password</label>
+                        <input type="password" id="current-password" name="current_password" required>
+                    </p>
+                    <p>
+                        <label for="new-password">New Password</label>
+                        <input type="password" id="new-password" name="new_password" minlength="6" required>
+                    </p>
+                    <p>
+                        <label for="confirm-password">Confirm New Password</label>
+                        <input type="password" id="confirm-password" name="confirm_password" minlength="6" required>
+                    </p>
+                    <button type="submit">Change Password</button>
+                </form>
+            </section>
+
+            <section aria-labelledby="notification-heading">
+                <h3 id="notification-heading">Notification Settings</h3>
+                <form id="notification-form" action="#" method="post">
+                    <p>
+                        <input type="checkbox" id="email-notification" name="email_notification">
+                        <label for="email-notification">Receive email notifications</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="claim-notification" name="claim_notification">
+                        <label for="claim-notification">Receive claim status updates</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="item-notification" name="item_notification">
+                        <label for="item-notification">Receive lost and found item alerts</label>
+                    </p>
+                    <button type="submit">Save Settings</button>
+                </form>
+            </section>
+
+            <section aria-labelledby="account-actions-heading">
+                <h3 id="account-actions-heading">Account Actions</h3>
+                <p><a href="forgot_password.html">Forgot Password?</a></p>
+                <p><a href="login.html">Logout</a></p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Campus Lost and Found Platform | AIUB</p>
+    </footer>
+</body>
+</html>

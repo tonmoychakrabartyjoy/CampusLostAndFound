@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Lost Property | Campus Lost &amp; Found</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+    <script src="pages.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Campus Lost &amp; Found</h1>
+        <p>Report Lost Property</p>
+    </header>
+
+    <div class="layout">
+        <aside>
+            <h2>Navigation</h2>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="faculty_dashboard.html">Dashboard</a></li>
+                    <li><a href="faculty_activity_log.html">Activity Log</a></li>
+                    <li><a href="items_browse.html">Items Browse</a></li>
+                    <li><a href="report_found.html">Report Found</a></li>
+                    <li><a href="report_lost.html" aria-current="page">Report Lost</a></li>
+                    <li><a href="report_history.html">My Reports &amp; Claims</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <h2>File a Lost Property Report</h2>
+            <p>Submit verified details to help campus security and fellow students locate your misplaced belongings.</p>
+
+            <p class="tab-links">
+                <a href="report_lost.html" class="tab-link active">Report Lost</a>
+                <a href="report_found.html" class="tab-link">Found Item</a>
+            </p>
+
+            <section aria-labelledby="lost-form-heading">
+                <h3 id="lost-form-heading">Item Identification Details</h3>
+                <form id="lost-form" action="#" method="post" novalidate>
+                    <p>
+                        <label for="item_name">Item Name</label>
+                        <input type="text" id="item_name" name="item_name" placeholder="e.g., Casio FX-991EX Calculator, Navy Blue Backpack" required>
+                    </p>
+                    <p>
+                        <label for="category">Category</label>
+                        <select id="category" name="category" required>
+                            <option value="">-- Select a Category --</option>
+                            <option value="Electronics">Electronics (Laptops, Phones, Chargers, Calculators)</option>
+                            <option value="Bags &amp; Wallets">Bags &amp; Wallets (Backpacks, Purses)</option>
+                            <option value="Documents &amp; IDs">Documents &amp; Student/Faculty IDs</option>
+                            <option value="Books &amp; Stationery">Books, Notebooks &amp; Stationery</option>
+                            <option value="Clothing &amp; Accessories">Clothing &amp; Accessories (Watches, Glasses)</option>
+                            <option value="Keys">Keys &amp; Locker Access Tokens</option>
+                            <option value="Other">Other Personal Possessions</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="description">Description (Distinct Features)</label>
+                        <textarea id="description" name="description" rows="4" maxlength="200" placeholder="Write distinct marks, color shades, stickers, brand names or scratches (max 200 characters)..." required></textarea>
+                        <small id="desc-counter" class="hint">0 / 200 characters. Mention identifiable marks without giving away secret passwords/codes.</small>
+                    </p>
+                    <p>
+                        <label for="location">Last Seen Campus Location</label>
+                        <select id="location" name="location" required>
+                            <option value="">-- Select Campus Location --</option>
+                            <option value="Annex 1">Annex 1</option>
+                            <option value="Annex 2">Annex 2</option>
+                            <option value="Annex 3">Annex 3</option>
+                            <option value="Annex 4">Annex 4</option>
+                            <option value="Annex 5">Annex 5</option>
+                            <option value="Annex 6">Annex 6</option>
+                            <option value="Annex 7">Annex 7</option>
+                            <option value="Annex 8">Annex 8</option>
+                            <option value="Annex 9">Annex 9</option>
+                            <option value="Central Library">Central Library</option>
+                            <option value="Main Cafeteria">Campus Main Cafeteria</option>
+                            <option value="Football Field">Football Field</option>
+                            <option value="Basement Parking">Basement Parking Area</option>
+                            <option value="Building C">Building C</option>
+                            <option value="Building D">Building D (Classrooms &amp; Security Desk)</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="date">Loss Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </p>
+                    <p>
+                        <label for="time">Approximate Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </p>
+                    <p>
+                        <label for="item_image">Upload Item Reference Image</label>
+                        <input type="file" id="item_image" name="item_image" accept="image/png, image/jpeg">
+                        <small class="hint">JPG or PNG, max 5MB. A photo greatly speeds up owner verification.</small>
+                    </p>
+
+                    <button type="submit">Submit Report</button>
+                    <button type="reset" class="secondary-button">Reset</button>
+                </form>
+                <p id="page-msg" class="page-msg" role="status"></p>
+            </section>
+
+            <section aria-labelledby="lost-log-heading">
+                <h3 id="lost-log-heading">Submitted Lost Property Reports (This Session)</h3>
+                <div class="table-container">
+                    <table id="report-log">
+                        <caption>Reports you submitted on this page</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Report ID</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Last Seen</th>
+                                <th scope="col">Date &amp; Time</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Campus Lost and Found Platform | AIUB</p>
+    </footer>
+</body>
+</html>

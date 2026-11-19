@@ -1,0 +1,80 @@
+/* Extra styles for the faculty pages. Loaded after style.css (same design as profile.html). */
+
+section h4 {
+    color: #24476b;
+    margin: 22px 0 6px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #e7eff9;
+    color: #17365d;
+}
+
+.badge-high,
+.badge-rejected {
+    background-color: #f8dcdc;
+    color: #8f2929;
+}
+
+.badge-medium,
+.badge-pending,
+.badge-draft {
+    background-color: #fdf0cf;
+    color: #7a5a0c;
+}
+
+.badge-low,
+.badge-approved,
+.badge-final {
+    background-color: #dcf1e4;
+    color: #1d6039;
+}
+
+.flag-on {
+    color: #b33a3a;
+    font-weight: bold;
+}
+
+.row-flagged td {
+    background-color: #fff6f6;
+}
+
+.empty-row td {
+    text-align: center;
+    color: #526477;
+}
+
+.detail-card .notice-date {
+    margin: 0 0 6px;
+    font-size: 13px;
+    color: #526477;
+}
+
+.detail-card .notice-actions {
+    margin-top: 8px;
+}
+
+.page-msg {
+    margin-top: 20px;
+    font-weight: bold;
+    min-height: 22px;
+}
+
+.page-msg.ok {
+    color: #1d6039;
+}
+
+.page-msg.error {
+    color: #b33a3a;
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+    border-color: #b33a3a;
+}

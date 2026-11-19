@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard | Campus Lost &amp; Found</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="faculty.css">
+    <script src="faculty.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Campus Lost &amp; Found</h1>
+        <p>Faculty / Department Portal</p>
+    </header>
+
+    <div class="layout">
+        <aside>
+            <h2>Navigation</h2>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="faculty_dashboard.html" aria-current="page">Dashboard</a></li>
+                    <li><a href="faculty_activity_log.html">Activity Log</a></li>
+                    <li><a href="items_browse.html">Items Browse</a></li>
+                    <li><a href="report_found.html">Report Found</a></li>
+                    <li><a href="report_lost.html">Report Lost</a></li>
+                    <li><a href="report_history.html">My Reports &amp; Claims</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <h2>Faculty Dashboard</h2>
+            <p>Overview of departmental priority reports, fast-track asset claims, priority flags and departmental notices.</p>
+
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <h3>Open Priority Reports</h3>
+                    <p class="summary-number" id="count-reports">0</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Flagged Reports</h3>
+                    <p class="summary-number" id="count-flagged">0</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Pending Fast-Track Claims</h3>
+                    <p class="summary-number" id="count-claims">0</p>
+                </div>
+            </div>
+
+            <!-- PRIORITY REPORTS -->
+            <section aria-labelledby="priority-heading">
+                <h3 id="priority-heading">Departmental Priority Reports</h3>
+                <div class="table-container">
+                    <table id="priority-table">
+                        <caption>Priority reports for your department</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Report ID</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">Priority</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Flag</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <h4>Add Priority Report</h4>
+                <form id="priority-form" action="#" method="post" novalidate>
+                    <p>
+                        <label for="pr-item">Item Name</label>
+                        <input type="text" id="pr-item" name="item" placeholder="e.g., Department Projector Remote" required>
+                    </p>
+                    <p>
+                        <label for="pr-department">Department</label>
+                        <select id="pr-department" name="department" required>
+                            <option value="">-- Select Department --</option>
+                            <option value="CS">Computer Science</option>
+                            <option value="EEE">Electrical &amp; Electronic Engineering</option>
+                            <option value="BBA">Business Administration</option>
+                            <option value="English">English</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="pr-priority">Priority</label>
+                        <select id="pr-priority" name="priority" required>
+                            <option value="">-- Select Priority --</option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </p>
+                    <button type="submit">Add Report</button>
+                    <button type="reset" class="secondary-button">Clear Form</button>
+                </form>
+            </section>
+
+            <!-- FAST TRACK CLAIMS -->
+            <section aria-labelledby="claims-heading">
+                <h3 id="claims-heading">Fast-Track Official Asset Claim Tracker</h3>
+                <div class="table-container">
+                    <table id="claims-tracker">
+                        <caption>Official asset claims awaiting verification</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Claim ID</th>
+                                <th scope="col">Asset</th>
+                                <th scope="col">Claimed By</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <h4>Add Fast-Track Claim</h4>
+                <form id="claim-form" action="#" method="post" novalidate>
+                    <p>
+                        <label for="fc-asset">Asset Name</label>
+                        <input type="text" id="fc-asset" name="asset" placeholder="e.g., Lab Laptop (Asset Tag AIUB-4471)" required>
+                    </p>
+                    <p>
+                        <label for="fc-claimant">Claimed By</label>
+                        <input type="text" id="fc-claimant" name="claimant" placeholder="Faculty / staff name" required>
+                    </p>
+                    <button type="submit">Add Claim</button>
+                    <button type="reset" class="secondary-button">Clear Form</button>
+                </form>
+            </section>
+
+            <!-- NOTICES -->
+            <section aria-labelledby="notice-heading">
+                <h3 id="notice-heading">Departmental Notices</h3>
+                <div id="notice-list"></div>
+
+                <h4 id="notice-form-title">Create Notice</h4>
+                <form id="notice-form" action="#" method="post" novalidate>
+                    <p>
+                        <label for="notice-title">Notice Title</label>
+                        <input type="text" id="notice-title" name="title" placeholder="Enter notice title" required>
+                    </p>
+                    <p>
+                        <label for="notice-text">Notice Text</label>
+                        <textarea id="notice-text" name="text" rows="4" placeholder="Write the departmental notice..." required></textarea>
+                    </p>
+                    <button type="submit" id="notice-submit">Publish Notice</button>
+                    <button type="reset" class="secondary-button" id="notice-reset">Clear Form</button>
+                </form>
+            </section>
+
+            <p id="page-msg" class="page-msg" role="status"></p>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Campus Lost and Found Platform | AIUB</p>
+    </footer>
+</body>
+</html>
