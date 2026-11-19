@@ -1,0 +1,188 @@
+/* Common CSS for requirements 01 to 04 */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f5f9;
+    color: #222222;
+}
+
+header {
+    background-color: #17365d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 8px 0;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    width: 85%;
+    max-width: 900px;
+    margin: 25px auto;
+    background-color: white;
+    padding: 25px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2,
+h3 {
+    color: #17365d;
+}
+
+.welcome-section {
+    text-align: center;
+    background-color: #eaf1f8;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+form {
+    margin-top: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+button,
+.button-link {
+    display: inline-block;
+    background-color: #1d5d99;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover,
+.button-link:hover {
+    background-color: #123f6b;
+}
+
+.secondary-link,
+.reset-button {
+    background-color: #687887;
+}
+
+.secondary-link:hover,
+.reset-button:hover {
+    background-color: #4c5a67;
+}
+
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category-button {
+    background-color: #e4edf7;
+    color: #17365d;
+    border: 1px solid #b9c9da;
+}
+
+.category-button:hover,
+.category-button.active {
+    background-color: #17365d;
+    color: white;
+}
+
+.form-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#item-list {
+    border: 1px solid #dddddd;
+    padding: 15px;
+    border-radius: 5px;
+    min-height: 40px;
+}
+
+.item-card {
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.item-card h3 {
+    margin-top: 0;
+}
+
+.quick-links a {
+    color: #1d5d99;
+}
+
+footer {
+    background-color: #17365d;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    margin-top: 25px;
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        width: 90%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .category-list {
+        flex-direction: column;
+    }
+}
+
+/* Form validation messages */
+.error-message {
+    color: #b42318;
+    font-weight: bold;
+}
