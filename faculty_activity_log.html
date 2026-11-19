@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Activity Log | Campus Lost &amp; Found</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="faculty.css">
+    <script src="faculty.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Campus Lost &amp; Found</h1>
+        <p>Faculty / Department Portal</p>
+    </header>
+
+    <div class="layout">
+        <aside>
+            <h2>Navigation</h2>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="faculty_dashboard.html">Dashboard</a></li>
+                    <li><a href="faculty_activity_log.html" aria-current="page">Activity Log</a></li>
+                    <li><a href="items_browse.html">Items Browse</a></li>
+                    <li><a href="report_found.html">Report Found</a></li>
+                    <li><a href="report_lost.html">Report Lost</a></li>
+                    <li><a href="report_history.html">My Reports &amp; Claims</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <h2>Faculty Activity Log</h2>
+            <p>Chronological department resolution history with internal administrative remarks and archived draft notes.</p>
+
+            <!-- FILTER -->
+            <section aria-labelledby="filter-heading">
+                <h3 id="filter-heading">Filter Resolution History</h3>
+                <form id="filter-form" action="#" method="get">
+                    <p>
+                        <label for="filter-department">Department</label>
+                        <select id="filter-department" name="department">
+                            <option value="">All Departments</option>
+                            <option value="CS">Computer Science</option>
+                            <option value="EEE">Electrical &amp; Electronic Engineering</option>
+                            <option value="BBA">Business Administration</option>
+                            <option value="English">English</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="filter-from">From Date</label>
+                        <input type="date" id="filter-from" name="from">
+                    </p>
+                    <p>
+                        <label for="filter-to">To Date</label>
+                        <input type="date" id="filter-to" name="to">
+                    </p>
+                    <p>
+                        <label for="filter-keyword">Keyword</label>
+                        <input type="text" id="filter-keyword" name="keyword" placeholder="Search item or remark">
+                    </p>
+                    <button type="submit">Apply Filter</button>
+                    <button type="reset" class="secondary-button" id="filter-reset">Reset Filter</button>
+                </form>
+            </section>
+
+            <!-- LOG TABLE -->
+            <section aria-labelledby="log-heading">
+                <h3 id="log-heading">Department Resolution History</h3>
+                <p id="log-count">Showing 0 entries.</p>
+                <div class="table-container">
+                    <table id="resolution-table">
+                        <caption>Resolutions sorted by newest first</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Log ID</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Resolution</th>
+                                <th scope="col">Admin Remark</th>
+                                <th scope="col">Note Status</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ADD ENTRY -->
+            <section aria-labelledby="add-heading">
+                <h3 id="add-heading">Add Resolution Remark</h3>
+                <form id="resolution-form" action="#" method="post" novalidate>
+                    <p>
+                        <label for="res-date">Date</label>
+                        <input type="date" id="res-date" name="date" required>
+                    </p>
+                    <p>
+                        <label for="res-department">Department</label>
+                        <select id="res-department" name="department" required>
+                            <option value="">-- Select Department --</option>
+                            <option value="CS">Computer Science</option>
+                            <option value="EEE">Electrical &amp; Electronic Engineering</option>
+                            <option value="BBA">Business Administration</option>
+                            <option value="English">English</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="res-item">Item</label>
+                        <input type="text" id="res-item" name="item" placeholder="Item related to this resolution" required>
+                    </p>
+                    <p>
+                        <label for="res-resolution">Resolution</label>
+                        <select id="res-resolution" name="resolution" required>
+                            <option value="">-- Select Resolution --</option>
+                            <option value="Returned to owner">Returned to owner</option>
+                            <option value="Transferred to security">Transferred to security</option>
+                            <option value="Claim rejected">Claim rejected</option>
+                            <option value="Unclaimed - held">Unclaimed - held</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="res-remark">Internal Administrative Remark</label>
+                        <textarea id="res-remark" name="remark" rows="4" placeholder="Write the internal remark (minimum 5 characters)" required></textarea>
+                    </p>
+                    <p>
+                        <label for="res-status">Note Status</label>
+                        <select id="res-status" name="status" required>
+                            <option value="Draft">Draft</option>
+                            <option value="Final">Final</option>
+                        </select>
+                    </p>
+                    <button type="submit">Save Entry</button>
+                    <button type="reset" class="secondary-button">Clear Form</button>
+                </form>
+            </section>
+
+            <!-- ARCHIVE -->
+            <section aria-labelledby="archive-heading">
+                <h3 id="archive-heading">Archived Draft Notes</h3>
+                <div class="table-container">
+                    <table id="archive-table">
+                        <caption>Outdated draft notes moved out of the active log</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Log ID</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Admin Remark</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <p id="page-msg" class="page-msg" role="status"></p>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Campus Lost and Found Platform | AIUB</p>
+    </footer>
+</body>
+</html>

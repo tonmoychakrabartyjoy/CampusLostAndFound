@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Found Property | Campus Lost &amp; Found</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+    <script src="pages.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Campus Lost &amp; Found</h1>
+        <p>Report Found Property</p>
+    </header>
+
+    <div class="layout">
+        <aside>
+            <h2>Navigation</h2>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="faculty_dashboard.html">Dashboard</a></li>
+                    <li><a href="faculty_activity_log.html">Activity Log</a></li>
+                    <li><a href="items_browse.html">Items Browse</a></li>
+                    <li><a href="report_found.html" aria-current="page">Report Found</a></li>
+                    <li><a href="report_lost.html">Report Lost</a></li>
+                    <li><a href="report_history.html">My Reports &amp; Claims</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <h2>File a Found Property Notice</h2>
+            <p>Log details of an item you recovered on campus so the verified owner or campus security can retrieve it.</p>
+
+            <p class="tab-links">
+                <a href="report_lost.html" class="tab-link">Report Lost</a>
+                <a href="report_found.html" class="tab-link active">Found Item</a>
+            </p>
+
+            <section aria-labelledby="found-form-heading">
+                <h3 id="found-form-heading">Found Property &amp; Custody Details</h3>
+                <form id="found-form" action="#" method="post" novalidate>
+                    <p>
+                        <label for="item_name">Item Name</label>
+                        <input type="text" id="item_name" name="item_name" placeholder="e.g., Casio FX-991EX Calculator, Navy Blue Backpack" required>
+                    </p>
+                    <p>
+                        <label for="category">Category</label>
+                        <select id="category" name="category" required>
+                            <option value="">-- Select a Category --</option>
+                            <option value="Electronics">Electronics (Laptops, Phones, Chargers, Calculators)</option>
+                            <option value="Bags &amp; Wallets">Bags &amp; Wallets (Backpacks, Purses)</option>
+                            <option value="Documents &amp; IDs">Documents &amp; Student/Faculty IDs</option>
+                            <option value="Books &amp; Stationery">Books, Notebooks &amp; Stationery</option>
+                            <option value="Clothing &amp; Accessories">Clothing &amp; Accessories (Watches, Glasses)</option>
+                            <option value="Keys">Keys &amp; Locker Access Tokens</option>
+                            <option value="Other">Other Personal Possessions</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="description">Description (Distinct Features)</label>
+                        <textarea id="description" name="description" rows="4" maxlength="200" placeholder="Mention color, brand and exterior condition. Keep unique stickers or passwords confidential to test claimant ownership..." required></textarea>
+                        <small id="desc-counter" class="hint">0 / 200 characters. Do not disclose private serial numbers or lock screen contents.</small>
+                    </p>
+                    <p>
+                        <label for="location">Where Did You Find It?</label>
+                        <select id="location" name="location" required>
+                            <option value="">-- Select Campus Location --</option>
+                            <option value="Annex 1">Annex 1</option>
+                            <option value="Annex 2">Annex 2</option>
+                            <option value="Annex 3">Annex 3</option>
+                            <option value="Annex 4">Annex 4</option>
+                            <option value="Annex 5">Annex 5</option>
+                            <option value="Annex 6">Annex 6</option>
+                            <option value="Annex 7">Annex 7</option>
+                            <option value="Annex 8">Annex 8</option>
+                            <option value="Annex 9">Annex 9</option>
+                            <option value="Central Library">Central Library</option>
+                            <option value="Main Cafeteria">Campus Main Cafeteria</option>
+                            <option value="Football Field">Football Field</option>
+                            <option value="Basement Parking">Basement Parking Area</option>
+                            <option value="Building C">Building C</option>
+                            <option value="Building D">Building D (Classrooms &amp; Security Desk)</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="custody">Current Item Custody</label>
+                        <select id="custody" name="custody" required>
+                            <option value="">-- Select Custody Location --</option>
+                            <option value="Security Desk">Handed over to Security Desk (Building D)</option>
+                            <option value="Department Office">Handed over to Faculty/Department Office</option>
+                            <option value="With Finder">With me (temporary custody until owner contacts)</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="date">Found Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </p>
+                    <p>
+                        <label for="time">Found Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </p>
+                    <p>
+                        <label for="item_image">Upload Item Reference Image</label>
+                        <input type="file" id="item_image" name="item_image" accept="image/png, image/jpeg">
+                        <small class="hint">JPG or PNG, max 5MB. A photo greatly speeds up owner verification.</small>
+                    </p>
+
+                    <button type="submit">Submit Notice</button>
+                    <button type="reset" class="secondary-button">Reset</button>
+                </form>
+                <p id="page-msg" class="page-msg" role="status"></p>
+            </section>
+
+            <section aria-labelledby="found-log-heading">
+                <h3 id="found-log-heading">Logged Found Property Notices (This Session)</h3>
+                <div class="table-container">
+                    <table id="report-log">
+                        <caption>Notices you submitted on this page</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Notice ID</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Found At</th>
+                                <th scope="col">Custody</th>
+                                <th scope="col">Date &amp; Time</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Campus Lost and Found Platform | AIUB</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Listings | Campus Lost &amp; Found</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+    <script src="pages.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Campus Lost &amp; Found</h1>
+        <p>Browse Listings</p>
+    </header>
+
+    <div class="layout">
+        <aside>
+            <h2>Navigation</h2>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="faculty_dashboard.html">Dashboard</a></li>
+                    <li><a href="faculty_activity_log.html">Activity Log</a></li>
+                    <li><a href="items_browse.html" aria-current="page">Items Browse</a></li>
+                    <li><a href="report_found.html">Report Found</a></li>
+                    <li><a href="report_lost.html">Report Lost</a></li>
+                    <li><a href="report_history.html">My Reports &amp; Claims</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <h2>Browse Active Listings</h2>
+            <p>Filter or search through all verified items reported lost or found across campus.</p>
+
+            <section aria-labelledby="filter-heading">
+                <h3 id="filter-heading">Search &amp; Filter</h3>
+                <form id="filter-form" action="#" method="get">
+                    <p>
+                        <label for="search">Keyword</label>
+                        <input type="text" id="search" name="q" placeholder="Search lost item, bag, pen ...">
+                    </p>
+                    <p>
+                        <label for="filter-category">Category</label>
+                        <select id="filter-category" name="category">
+                            <option value="">All Categories</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="bags">Bags &amp; Wallets</option>
+                            <option value="documents">Documents &amp; Student IDs</option>
+                            <option value="stationery">Books &amp; Stationery</option>
+                            <option value="keys">Keys &amp; Small Items</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="filter-location">Campus Location</label>
+                        <select id="filter-location" name="location">
+                            <option value="">All Campus Locations</option>
+                            <option value="building-d">Building D</option>
+                            <option value="library">Central Library</option>
+                            <option value="cafeteria">Main Cafeteria</option>
+                            <option value="annex">Annex Buildings</option>
+                            <option value="basement">Basement Parking Area</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="filter-type">Status Type</label>
+                        <select id="filter-type" name="type">
+                            <option value="">All Statuses</option>
+                            <option value="found">Found Items (Claimable)</option>
+                            <option value="lost">Lost Reports</option>
+                        </select>
+                    </p>
+                    <button type="submit">Apply</button>
+                    <button type="reset" class="secondary-button" id="filter-reset">Reset</button>
+                </form>
+            </section>
+
+            <section aria-labelledby="listing-heading">
+                <h3 id="listing-heading">Listings</h3>
+                <p id="result-count">Showing 6 active items. Sorted by: Most Recent</p>
+
+                <div id="card-grid" class="card-grid">
+                    <div class="detail-card item-card" data-type="found" data-category="electronics" data-location="building-d">
+                        <span class="badge badge-found">Found</span>
+                        <h4 class="item-title">Casio FX-991EX ClassWiz</h4>
+                        <ul class="item-meta">
+                            <li>Category: <strong>Electronics</strong></li>
+                            <li>Location: <strong>Building D, Room 204</strong></li>
+                            <li>Date: <strong>27 Oct 2026</strong></li>
+                        </ul>
+                        <p class="item-description">Black scientific calculator with solar panel and silver buttons. Left on study bench.</p>
+                        <a class="card-link" href="claim_item.html?id=101">Claim Item</a>
+                    </div>
+
+                    <div class="detail-card item-card" data-type="lost" data-category="bags" data-location="cafeteria">
+                        <span class="badge badge-lost">Lost</span>
+                        <h4 class="item-title">Navy Blue Backpack</h4>
+                        <ul class="item-meta">
+                            <li>Category: <strong>Bags &amp; Wallets</strong></li>
+                            <li>Location: <strong>Main Cafeteria</strong></li>
+                            <li>Date: <strong>26 Oct 2026</strong></li>
+                        </ul>
+                        <p class="item-description">Contains midterm lecture notes, water bottle, and student notebooks.</p>
+                        <a class="card-link secondary-link" href="report_found.html">I Found This</a>
+                    </div>
+
+                    <div class="detail-card item-card" data-type="found" data-category="documents" data-location="library">
+                        <span class="badge badge-found">Found</span>
+                        <h4 class="item-title">AIUB Student ID Card</h4>
+                        <ul class="item-meta">
+                            <li>Category: <strong>Documents &amp; IDs</strong></li>
+                            <li>Location: <strong>Library 3rd Floor</strong></li>
+                            <li>Date: <strong>28 Oct 2026</strong></li>
+                        </ul>
+                        <p class="item-description">Deposited at the central reception desk. Verified student photo on badge.</p>
+                        <a class="card-link" href="claim_item.html?id=103">Claim Item</a>
+                    </div>
+
+                    <div class="detail-card item-card" data-type="found" data-category="electronics" data-location="annex">
+                        <span class="badge badge-found">Found</span>
+                        <h4 class="item-title">HP 65W Blue-Pin Charger</h4>
+                        <ul class="item-meta">
+                            <li>Category: <strong>Electronics</strong></li>
+                            <li>Location: <strong>Annex 2 Lab Room</strong></li>
+                            <li>Date: <strong>25 Oct 2026</strong></li>
+                        </ul>
+                        <p class="item-description">Genuine HP laptop adapter with standard 3-pin power cord attached.</p>
+                        <a class="card-link" href="claim_item.html?id=104">Claim Item</a>
+                    </div>
+
+                    <div class="detail-card item-card" data-type="lost" data-category="keys" data-location="basement">
+                        <span class="badge badge-lost">Lost</span>
+                        <h4 class="item-title">Motorbike Key with Red Tag</h4>
+                        <ul class="item-meta">
+                            <li>Category: <strong>Keys &amp; Small Items</strong></li>
+                            <li>Location: <strong>Basement Parking</strong></li>
+                            <li>Date: <strong>28 Oct 2026</strong></li>
+                        </ul>
+                        <p class="item-description">Single bike ignition key with red nylon strap and silver tag.</p>
+                        <a class="card-link secondary-link" href="report_found.html">I Found This</a>
+                    </div>
+
+                    <div class="detail-card item-card" data-type="found" data-category="stationery" data-location="building-d">
+                        <span class="badge badge-found">Found</span>
+                        <h4 class="item-title">Algorithms Study Notebook</h4>
+                        <ul class="item-meta">
+                            <li>Category: <strong>Books &amp; Stationery</strong></li>
+                            <li>Location: <strong>Building D, Room 101</strong></li>
+                            <li>Date: <strong>29 Oct 2026</strong></li>
+                        </ul>
+                        <p class="item-description">Hardcover spiral notepad with handwriting notes on Trees &amp; Graphs.</p>
+                        <a class="card-link" href="claim_item.html?id=106">Claim Item</a>
+                    </div>
+                </div>
+
+                <p id="no-results" class="page-msg error" hidden>No matching items found. Try adjusting your search or filter selections.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Campus Lost and Found Platform | AIUB</p>
+    </footer>
+</body>
+</html>
