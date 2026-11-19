@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Verification Hub | Campus Lost &amp; Found</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Campus Lost &amp; Found</h1>
+        <p>Security Officer Portal</p>
+    </header>
+
+    <div class="layout">
+        <aside>
+            <h2>Navigation</h2>
+            <nav aria-label="Security officer navigation">
+                <ul>
+                    <li><a href="security_dashboard.html" aria-current="page">Security Verification Hub</a></li>
+                    <li><a href="item_storage.html">Storage &amp; Handover Log</a></li>
+                    <li><a href="profile.html">Profile Settings</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <h2>Security Verification Hub</h2>
+            <p>Review incoming reports and ownership claims, verify evidence, and update claim decisions.</p>
+
+            <section aria-labelledby="queue-heading">
+                <h3 id="queue-heading">Incoming Reports</h3>
+                <div class="table-container">
+                    <table id="security-reports-table">
+                        <caption>Reports waiting for security review</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Report ID</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Report Type</th>
+                                <th scope="col">Submitted By</th>
+                                <th scope="col">Location</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section aria-labelledby="claims-queue-heading">
+                <h3 id="claims-queue-heading">Ownership Claim Review Queue</h3>
+                <div class="table-container">
+                    <table id="security-claims-table">
+                        <caption>Claims requiring verification</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Claim ID</th>
+                                <th scope="col">Related Item</th>
+                                <th scope="col">Claimant</th>
+                                <th scope="col">Submitted</th>
+                                <th scope="col">Current Status</th>
+                                <th scope="col">Decision</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section aria-labelledby="report-review-heading">
+                <h3 id="report-review-heading">Report Review</h3>
+                <div class="detail-card">
+                    <form id="report-review-form" action="#" method="post">
+                        <p>
+                            <label for="review-report-id">Report ID</label>
+                            <input type="text" id="review-report-id" name="report_id" placeholder="Enter report ID" required>
+                        </p>
+                        <p>
+                            <label for="report-review-note">Review note</label>
+                            <textarea id="report-review-note" name="review_note" rows="4" placeholder="Enter review notes"></textarea>
+                        </p>
+                        <button type="submit" name="action" value="save_review">Save review note</button>
+                    </form>
+                </div>
+            </section>
+
+            
+
+            <section aria-labelledby="claim-review-heading">
+                <h3 id="claim-review-heading">Claim Review</h3>
+                <div class="detail-card">
+                    <form id="claim-review-form" action="#" method="post">
+                        <p>
+                            <label for="review-claim-id">Claim ID</label>
+                            <input type="text" id="review-claim-id" name="claim_id" placeholder="Enter claim ID" required>
+                        </p>
+                        <p>
+                            <label for="claim-status">Update claim status</label>
+                            <select id="claim-status" name="claim_status" required>
+                                <option value="">Select a decision</option>
+                                <option value="Approved">Approved</option>
+                                <option value="Rejected">Rejected</option>
+                                <option value="Need Proof">Need Proof</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="claim-note">Officer note / reason</label>
+                            <textarea id="claim-note" name="claim_note" rows="4" placeholder="Enter officer note" required></textarea>
+                        </p>
+                        <button type="submit">Update claim status</button>
+                    </form>
+                </div>
+            </section>
+
+            
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Campus Lost and Found Platform | AIUB</p>
+    </footer>
+</body>
+</html>
