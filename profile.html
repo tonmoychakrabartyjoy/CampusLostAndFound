@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings | Campus Lost &amp; Found</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Campus Lost &amp; Found</h1>
+        <p>Security Officer Portal</p>
+    </header>
+
+    <div class="layout">
+        <aside>
+            <h2>Navigation</h2>
+            <nav aria-label="Security officer navigation">
+                <ul>
+                    <li><a href="security_dashboard.html">Security Verification Hub</a></li>
+                    <li><a href="item_storage.html">Storage &amp; Handover Log</a></li>
+                    <li><a href="profile.html" aria-current="page">Profile Settings</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <h2>Profile Settings</h2>
+            <p>View and update your account details, profile picture, password, and notification preferences.</p>
+
+            <section aria-labelledby="account-summary-heading">
+                <h3 id="account-summary-heading">Account Summary</h3>
+                <div class="detail-card">
+                    <div class="profile-image-area">
+                        <div class="profile-avatar">SO</div>
+                        <div>
+                            <h4 id="profile-name">Md. Tariqul Islam</h4>
+                            <p id="profile-picture-name">Choose a profile picture</p>
+                        </div>
+                    </div>
+                    <p><strong>Officer / Staff ID:</strong> <span id="profile-id">SEC-2026-04</span></p>
+                    <p><strong>Email:</strong> <span id="profile-email">tariqul.security@aiub.edu</span></p>
+                    <p><strong>Department / Unit:</strong> <span id="profile-department">Campus Security &amp; Safety</span></p>
+                    <p><strong>Phone:</strong> <span id="profile-phone">+880 1711-000000</span></p>
+                </div>
+            </section>
+
+            <section aria-labelledby="edit-profile-heading">
+                <h3 id="edit-profile-heading">Edit Profile Information</h3>
+                <form id="profile-form" action="#" method="post" enctype="multipart/form-data">
+                    <p>
+                        <label for="full-name">Full name</label>
+                        <input type="text" id="full-name" name="full_name" value="Md. Tariqul Islam" required>
+                    </p>
+                    <p>
+                        <label for="student-id">Officer / Student ID</label>
+                        <input type="text" id="student-id" name="student_id" value="SEC-2026-04" required>
+                    </p>
+                    <p>
+                        <label for="email">Email address</label>
+                        <input type="email" id="email" name="email" value="tariqul.security@aiub.edu" required>
+                    </p>
+                    <p>
+                        <label for="department">Department / Unit</label>
+                        <select id="department" name="department" required>
+                            <option value="Campus Security & Safety" selected>Campus Security &amp; Safety</option>
+                            <option value="Computer Science & Engineering">Computer Science &amp; Engineering</option>
+                            <option value="Electrical & Electronic Engineering">Electrical &amp; Electronic Engineering</option>
+                            <option value="Business Administration">Business Administration</option>
+                            <option value="Student Affairs Office">Student Affairs Office</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="phone">Phone number</label>
+                        <input type="tel" id="phone" name="phone" value="+880 1711-000000" placeholder="Enter phone number">
+                    </p>
+                    <p>
+                        <label for="profile-picture">Profile picture</label>
+                        <input type="file" id="profile-picture" name="profile_picture" accept="image/*">
+                    </p>
+                    <button type="submit">Save Profile Changes</button>
+                </form>
+            </section>
+
+            <section aria-labelledby="password-heading">
+                <h3 id="password-heading">Change Password</h3>
+                <form id="password-form" action="#" method="post">
+                    <p>
+                        <label for="current-password">Current password</label>
+                        <input type="password" id="current-password" name="current_password" placeholder="Enter current password" required>
+                    </p>
+                    <p>
+                        <label for="new-password">New password</label>
+                        <input type="password" id="new-password" name="new_password" placeholder="Enter new password" required>
+                    </p>
+                    <p>
+                        <label for="confirm-password">Confirm new password</label>
+                        <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm new password" required>
+                    </p>
+                    <button type="submit">Update Password</button>
+                </form>
+            </section>
+
+            <section aria-labelledby="notification-heading">
+                <h3 id="notification-heading">Notification Preferences</h3>
+                <form id="notification-form" action="#" method="post">
+                    <p>
+                        <input type="checkbox" id="notify-reports" name="notify_reports" checked>
+                        <label for="notify-reports">Notify me when new lost or found reports are submitted</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="notify-claims" name="notify_claims" checked>
+                        <label for="notify-claims">Notify me when new ownership claims require review</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="notify-retention" name="notify_retention" checked>
+                        <label for="notify-retention">Alert me when stored items reach the retention period</label>
+                    </p>
+                    <button type="submit" class="success-button">Save Notification Settings</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Campus Lost and Found Platform | AIUB</p>
+    </footer>
+</body>
+</html>
