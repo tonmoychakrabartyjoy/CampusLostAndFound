@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Reports &amp; Claims | Campus Lost &amp; Found</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Campus Lost &amp; Found</h1>
+        <p>Student / Staff Portal</p>
+    </header>
+
+    <div class="layout">
+        <aside>
+            <h2>Navigation</h2>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="faculty_dashboard.html">Dashboard</a></li>
+                    <li><a href="faculty_activity_log.html">Activity Log</a></li>
+                    <li><a href="items_browse.html">Items Browse</a></li>
+                    <li><a href="report_found.html">Report Found</a></li>
+                    <li><a href="report_lost.html">Report Lost</a></li>
+                    <li><a href="report_history.html" aria-current="page">My Reports &amp; Claims</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <h2>My Reports &amp; Claims</h2>
+            <p>View and manage your lost-item reports, found-item reports, and ownership claims.</p>
+
+            <section aria-labelledby="report-summary-heading">
+                <h3 id="report-summary-heading">My Report History</h3>
+                <div class="table-container">
+                    <table id="reports-table">
+                        <caption>Reports submitted by you</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Report ID</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Report Type</th>
+                                <th scope="col">Date Submitted</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section aria-labelledby="claims-heading">
+                <h3 id="claims-heading">My Ownership Claims</h3>
+                <div class="table-container">
+                    <table id="claims-table">
+                        <caption>Claims submitted by you</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Claim ID</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Date Submitted</th>
+                                <th scope="col">Claim Status</th>
+                                <th scope="col">Officer Feedback</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section aria-labelledby="report-details-heading">
+                <h3 id="report-details-heading">Report Details</h3>
+                <p>Select a report from your report history to view its details.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Campus Lost and Found Platform | AIUB</p>
+    </footer>
+</body>
+</html>
