@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Profile &amp; Settings - Campus Lost and Found</title>
+        <link rel="stylesheet" href="profile.css">
+    </head>
+    <body>
+        <header>
+            <div id="header_text">
+                <h1>Campus Lost &amp; Found</h1>
+                <p>AIUB</p>
+            </div>
+
+            <form action="items_browse.html" method="get" onsubmit="return validateSearch(event)">
+                <label for="search">Search</label>
+                <input type="text" id="search" name="q" placeholder="Search lost item, bag, pen .....">
+                <button id="submit" type="submit">Submit</button>
+            </form>
+
+            <nav id="header_navigation">
+                <ul>
+                    <li><a href="dashboard.html">Notifications(1)</a></li>
+                    <li><a href="profile.html" id="nav_username">Tonmoy (Student)</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div>
+            <aside>
+                <nav id="aside_navigation">
+                    <h1>Portal Navigation</h1>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="items_browse.html">Browse Listing</a></li>
+                        <li><a href="report_lost.html">Report Lost Property</a></li>
+                        <li><a href="report_found.html">Report Found Property</a></li>
+                        <li><a href="report_history.html">My Reports and Claims</a></li>
+                        <li><a href="profile.html">Profile &amp; Settings</a></li>
+                    </ul>
+                </nav>
+                <div id="aside_ex_text">
+                    <h4>Campus Security Desk</h4>
+                    <p>Location: Ground Floor, Building D <br> Helpline: +880 155******8 </p>
+                </div>
+            </aside>
+
+            <main id="main_body">
+                <div id="main_head">
+                    <h1>Student Profile &amp; Account Settings</h1>
+                    <p>View your verified university credentials, update contact details, and manage account security.</p>
+                </div>
+
+                <div id="profile_container">
+                    <!-- Left Column: Student Identity Summary Card -->
+                    <div id="profile_card">
+                        <div class="avatar_circle" id="avatar_initials">TC</div>
+                        <h2 id="display_fullname">Tonmoy Chakrabarty Joy</h2>
+                        <p class="role_badge">Verified AIUB Student</p>
+
+                        <div class="profile_meta">
+                            <p><strong>Student ID:</strong> <span id="display_id">24-57838-2</span></p>
+                            <p><strong>Department:</strong> <span id="display_dept">Computer Science &amp; Engineering (CSE)</span></p>
+                            <p><strong>Institutional Email:</strong> <span id="display_email">24-57838-2@student.aiub.edu</span></p>
+                            <p><strong>Phone:</strong> <span id="display_phone">+880 1712345678</span></p>
+                            <p><strong>Account Status:</strong> Active (Good Standing)</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Edit Forms -->
+                    <div id="settings_column">
+                        <div class="settings_box">
+                            <form id="profile_form" onsubmit="return updateStudentProfile(event)" novalidate>
+                                <legend>Personal &amp; Contact Information</legend>
+
+                                <div class="form_group">
+                                    <label for="full_name">Full Name: <span class="required">*</span></label>
+                                    <input type="text" id="full_name" name="full_name" value="Tonmoy Chakrabarty Joy" required>
+                                </div>
+
+                                <div class="form_group">
+                                    <label for="student_id">University Student ID:</label>
+                                    <input type="text" id="student_id" name="student_id" value="24-57838-2" readonly>
+                                    <h6>Student ID is synced with AIUB records and cannot be edited manually.</h6>
+                                </div>
+
+                                <div class="form_group">
+                                    <label for="uni_email">Institutional Email:</label>
+                                    <input type="email" id="uni_email" name="uni_email" value="24-57838-2@student.aiub.edu" readonly>
+                                </div>
+
+                                <div class="form_group">
+                                    <label for="department">Department: <span class="required">*</span></label>
+                                    <select id="department" name="department" required>
+                                        <option value="Computer Science & Engineering (CSE)" selected>Computer Science &amp; Engineering (CSE)</option>
+                                        <option value="Electrical & Electronic Engineering (EEE)">Electrical &amp; Electronic Engineering (EEE)</option>
+                                        <option value="Business Administration (BBA)">Business Administration (BBA)</option>
+                                        <option value="Architecture">Architecture</option>
+                                        <option value="English">English</option>
+                                    </select>
+                                </div>
+
+                                <div class="form_group">
+                                    <label for="phone_number">Contact Phone Number: <span class="required">*</span></label>
+                                    <input type="tel" id="phone_number" name="phone_number" value="+880 1712345678" required>
+                                </div>
+
+                                <div class="form_group checkbox_group">
+                                    <input type="checkbox" id="email_alerts" name="email_alerts" checked>
+                                    <label for="email_alerts">Receive instant match alerts when a found item matches my lost reports.</label>
+                                </div>
+
+                                <p id="profile_msg" class="status_msg"></p>
+
+                                <div class="btn_row">
+                                    <button type="submit" id="btn_save_profile">Save Profile Changes</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="settings_box">
+                            <form id="password_form" onsubmit="return changePassword(event)" novalidate>
+                                <legend>Change Portal Password</legend>
+
+                                <div class="form_group">
+                                    <label for="current_password">Current Password: <span class="required">*</span></label>
+                                    <input type="password" id="current_password" name="current_password" placeholder="Enter current password" required>
+                                </div>
+
+                                <div class="form_group">
+                                    <label for="new_password">New Password: <span class="required">*</span></label>
+                                    <input type="password" id="new_password" name="new_password" placeholder="Minimum 6 characters" required>
+                                </div>
+
+                                <div class="form_group">
+                                    <label for="confirm_password">Confirm New Password: <span class="required">*</span></label>
+                                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter new password" required>
+                                </div>
+
+                                <p id="password_msg" class="status_msg"></p>
+
+                                <div class="btn_row">
+                                    <button type="submit" id="btn_update_password">Update Password</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Campus Lost and Found Platform | American International University-Bangladesh (AIUB)</p>
+            <p>CSC 3215 Web Technologies Project | Team <code>HTTP/1.1 200 OK</code></p>
+        </footer>
+
+        <script src="profile.js"></script>
+    </body>
+</html>
