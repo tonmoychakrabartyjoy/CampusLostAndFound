@@ -40,7 +40,7 @@ Because of all these problems, poor communication, lack of proper record keeping
 ### Create Account & Login Pages
 | Create Your Account | Login Page |
 | :---: | :---: |
-| ![Create Your Account](./ui_register.png) | ![Login Page](./ui_login.png) |
+| ![Create Your Account](./ui_register.png) | ![Login Page](./login.png) |
 
 ### Home & Search Listings Pages
 | Home / Overview | Search Lost Items & Claim Form |
