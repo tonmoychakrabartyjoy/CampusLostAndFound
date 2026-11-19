@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Lost &amp; Found | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Campus Lost &amp; Found</h1>
+        <p>Find what is lost. Return what is found.</p>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <h2>Welcome to Campus Lost &amp; Found</h2>
+            <p>A place for students and staff to report, search and recover lost items on campus.</p>
+            <p>
+                <a class="button-link" href="login.html">Login</a>
+                <a class="button-link secondary-link" href="register.html">Create an Account</a>
+            </p>
+        </section>
+
+        <section>
+            <h2>Search Lost &amp; Found Items</h2>
+            <form id="search-form" action="#" method="get">
+                <label for="keyword">Search by keyword</label>
+                <input type="text" id="keyword" name="keyword" placeholder="Enter item name or keyword">
+                <button type="submit">Search</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Browse by Category</h2>
+            <div class="category-list">
+                <button type="button" class="category-button" data-category="Electronics">Electronics</button>
+                <button type="button" class="category-button" data-category="Bags">Bags</button>
+                <button type="button" class="category-button" data-category="ID Cards">ID Cards</button>
+                <button type="button" class="category-button" data-category="Books">Books</button>
+                <button type="button" class="category-button" data-category="Other">Other</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Recent Lost &amp; Found Items</h2>
+            <div id="item-list">
+                <p id="empty-message">No recent listings are available right now.</p>
+            </div>
+        </section>
+
+        <section class="quick-links">
+            <h2>Quick Links</h2>
+            <p><a href="report_lost.html">Report a Lost Item</a></p>
+            <p><a href="report_found.html">Report a Found Item</a></p>
+            <p><a href="items_browse.html">Browse All Listings</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Campus Lost &amp; Found</p>
+    </footer>
+</body>
+</html>
